@@ -27,21 +27,25 @@ public class oopsappletballs extends PApplet{
      public void draw(){
        
        p.drawEllipse(v1,height/5);
-       v1++;
+       v1=p.speedIncrement(1,v1);
        
        p.drawEllipse(v2,height*2/5);
-        v2+=2;
+       v2=p.speedIncrement(2,v2);
         
        p.drawEllipse(v3,height*3/5);
-         v3+=3;
+       v3=p.speedIncrement(3,v3);
         
        p.drawEllipse(v4,height*4/5);
-         v4+=4;
+       v4=p.speedIncrement(4,v4);
        
      }
      class patternDrawing{
        void drawEllipse(int v, int h){
        ellipse(v,h,diameter1,diameter2);
      }
+       int speedIncrement(int step,int velocity){
+         return velocity+=step;
+       }
+       
      }
 }
